@@ -1,0 +1,35 @@
+.cards-goods {
+    padding-top: 30px;
+    padding-bottom: 70px;
+
+    &_mramor {
+        .card-img-top {
+            height: 228px;
+            object-fit: cover;
+        }
+    }
+
+    div[class^="col"] {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    &__overflow {
+        overflow: hidden;
+        
+        &:hover .card-img-top {
+        transform: scale(1.2);
+    }
+    }
+
+    .card-img-top {
+        transition: transform .75s;
+        // height: 200px;
+        // object-fit: cover;
+    }
+
+    .card-title {
+        font-size: calc(1rem + 0.9vw);
+    }
+}
