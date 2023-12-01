@@ -25,7 +25,7 @@ function NavComponent(props) {
   };
 
   return (
-      <Navbar {...props}>
+      <Navbar {...props} id='header-nav'>
         <NavbarBrand to="/" tag={NavLinkRouter}>Аркаскамень</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

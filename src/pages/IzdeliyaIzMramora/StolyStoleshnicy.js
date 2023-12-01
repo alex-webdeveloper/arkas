@@ -2,6 +2,8 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer/Footer";
 // import CardsGoods from '../../components/CardsGoods/CardsGoods';
 import GalleryImg from '../../components/GalleryImg';
+import Guarantee from "../../components/Guarantee/Guarantee";
+import Feedback, { FeedbackPhone } from "../../components/Feedback";
 
 const images = [
   {
@@ -65,7 +67,10 @@ const StolyStoleshnicy = () => {
 		<>
 			<Header title={'Столы, столешницы'} />
 			<main className='main-goods'>
-				<GalleryImg items={images} />
+        <GalleryImg items={images} />
+        <FeedbackPhone/>
+        <Guarantee />
+        <Feedback/>
 			</main>
 			<Footer/>
 		</>

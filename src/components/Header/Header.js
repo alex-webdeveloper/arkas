@@ -5,7 +5,7 @@ import NavComponent from '../navComponent';
 
 const Header = ({title}) => {
     return (
-		<header className='header'>
+		<header id='header' className='header'>
 			<NavComponent container={true} expand={'lg'} color={'dark'} dark={true} fixed={'top'} />
 			<div className="banner">
 				<h1>{title}</h1>

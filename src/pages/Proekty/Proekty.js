@@ -1,8 +1,10 @@
 import './Proekty.scss';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer/Footer';
-import { Container } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import GalleryImg from '../../components/GalleryImg';
+import Guarantee from '../../components/Guarantee/Guarantee';
+import Feedback from '../../components/Feedback';
 
 const nobelius = [
   {
@@ -199,16 +201,15 @@ const apartment = [
 
 const Proekty = () => {
 
-	const handleClick = (e) => {
+  const handleClick = (e) => {
 		const target = e.target.closest('.main-pages__tab');
 		if (!target || target.classList.contains('main-pages__tab_active')) return;
-		const id = target.dataset?.target;
-    // const uu = target.dataset.target;
-    const parent = target.parentElement;
-		const arrTabs = parent.children;
+		const id = target.dataset.target?.slice(1);
+    const parent = e.currentTarget;
+    const arrTabs = [...parent.firstElementChild.firstElementChild.firstElementChild.children, ...parent.firstElementChild.lastElementChild.firstElementChild.children];
 
 		const [...arrGal] = parent.nextElementSibling.children;
-		arrGal.forEach((block, i) => {
+    arrGal.forEach((block, i) => {
 			arrTabs[i].classList.remove('main-pages__tab_active');
 			block.classList.remove('main-pages__gallery_active');
 			if (block.id === id) block.classList.add('main-pages__gallery_active');
@@ -220,17 +221,69 @@ const Proekty = () => {
 		<>
 			<Header title={'Наши проекты'} />
 			<main className="main-pages">
-				<Container>
-            <div className="main-pages__collapse-block">
+          <Container>
+            <div className="main-pages__block-tabs-images">
+              <div className="main-pages__collapse-block" onClick={handleClick}>
+                <Row>
+                  <Col sm='6'>
+                    <ul className="main-pages__tabs">
+                      <li className="main-pages__tab main-pages__tab_active" data-target="#nobelius">ЖК Нобелиус</li>
+                      <li className="main-pages__tab" data-target="#bathhouse">Бани Алексеева г. Подольск</li>
+                      <li className="main-pages__tab" data-target="#apartment">Апарт-комплекс Красная стрела</li>
+                      <li className="main-pages__tab">Балтийская ривьера</li>
+                      <li className="main-pages__tab">Библиотека имени Ленина</li>
+                      <li className="main-pages__tab">ЖК Резиденция Замоскворечье м.Павелецкая</li>
+                      <li className="main-pages__tab">ЖК Николаевский ансамбль</li>
+                      <li className="main-pages__tab">Колотая плита Большой формат</li>
+                      <li className="main-pages__tab">Памятник Евгению Примакову</li>
+                    </ul>
+                  </Col>
+                  <Col sm='6'>
+                    <ul className="main-pages__tabs">
+                      <li className="main-pages__tab">Поселок дома отдыха им.А.П.Чехова</li>
+                      <li className="main-pages__tab">Храм на филевской пойме</li>
+                      <li className="main-pages__tab">Храм Новомучеников и исповедников Российских в Строгино</li>
+                      <li className="main-pages__tab">Храм Преподобного Серафима Саровского в Раево</li>
+                      <li className="main-pages__tab">Частная резиденция</li>
+                      <li className="main-pages__tab">Частный дом</li>
+                      <li className="main-pages__tab">Частный дом КП Горки</li>
+                      <li className="main-pages__tab">IQ-APARTMENTS Москва-Сити</li>
+                      <li className="main-pages__tab">Объект Московского метрополитена - станция «Стромынка» Сокольнической линии</li>
+                    </ul>
+                  </Col>
+                </Row>
+              </div>
+              <div className="main-pages__galleries">
+                  <div id='nobelius' className='main-pages__gallery main-pages__gallery_active'><GalleryImg items={nobelius} /></div>
+                  <div id='bathhouse' className='main-pages__gallery'><GalleryImg items={bathhouse} /></div>
+                  <div id='apartment' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                  <div id='apart' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                  <div id='apart' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                  <div id='apart' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                  <div id='apart' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                  <div id='apart' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                  <div id='apart' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                  <div id='apart' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                  <div id='apart' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                  <div id='apart' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                  <div id='apart' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                  <div id='apart' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                  <div id='apart' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                  <div id='apart' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                  <div id='apart' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                  <div id='apart' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+              </div>
+            </div>
+            {/* <div className="main-pages__collapse-block">
               <ul className="main-pages__tabs" onClick={handleClick}>
                 <li className="main-pages__tab main-pages__tab_active" data-target="#nobelius"><span>ЖК Нобелиус</span></li>
                 <li className="main-pages__tab" data-target="#bathhouse"><span>Бани Алексеева г. Подольск</span></li>
                 <li className="main-pages__tab" data-target="#apartment"><span>Апарт-комплекс Красная стрела</span></li>
               </ul>
               <div className="main-pages__galleries">
-                <div id='#nobelius' className='main-pages__gallery main-pages__gallery_active'><GalleryImg items={nobelius} /></div>
-                <div id='#bathhouse' className='main-pages__gallery'><GalleryImg items={bathhouse} /></div>
-                <div id='#apartment' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                <div id='nobelius' className='main-pages__gallery main-pages__gallery_active'><GalleryImg items={nobelius} /></div>
+                <div id='bathhouse' className='main-pages__gallery'><GalleryImg items={bathhouse} /></div>
+                <div id='apartment' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
               </div>
             </div>
             <div className="main-pages__collapse-block">
@@ -240,9 +293,9 @@ const Proekty = () => {
                 <li className="main-pages__tab" data-target="#apartment"><span>ЖК Резиденция Замоскворечье м.Павелецкая</span></li>
               </ul>
               <div className="main-pages__galleries">
-                <div id='#nobelius' className='main-pages__gallery '><GalleryImg items={nobelius} /></div>
-                <div id='#bathhouse' className='main-pages__gallery'><GalleryImg items={bathhouse} /></div>
-                <div id='#apartment' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                <div id='nobelius' className='main-pages__gallery '><GalleryImg items={nobelius} /></div>
+                <div id='bathhouse' className='main-pages__gallery'><GalleryImg items={bathhouse} /></div>
+                <div id='apartment' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
               </div>
             </div>
             <div className="main-pages__collapse-block">
@@ -252,12 +305,14 @@ const Proekty = () => {
                 <li className="main-pages__tab" data-target="#apartment"><span>Памятник Евгению Примакову</span></li>
               </ul>
               <div className="main-pages__galleries">
-                <div id='#nobelius' className='main-pages__gallery '><GalleryImg items={nobelius} /></div>
-                <div id='#bathhouse' className='main-pages__gallery'><GalleryImg items={bathhouse} /></div>
-                <div id='#apartment' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+                <div id='nobelius' className='main-pages__gallery '><GalleryImg items={nobelius} /></div>
+                <div id='bathhouse' className='main-pages__gallery'><GalleryImg items={bathhouse} /></div>
+                <div id='apartment' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
               </div>
-            </div>
-				</Container>
+            </div> */}
+          </Container>
+          <Guarantee />
+          <Feedback/>
 			</main>
 			<Footer/>
 		</>

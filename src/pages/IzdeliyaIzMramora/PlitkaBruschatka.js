@@ -3,6 +3,8 @@ import Footer from "../../components/Footer/Footer";
 import CardsGoods from '../../components/CardsGoods/CardsGoods';
 import { plitka, bruschatka } from '../../data';
 import GalleryImg from '../../components/GalleryImg';
+import Guarantee from "../../components/Guarantee/Guarantee";
+import Feedback, {FeedbackPhone} from "../../components/Feedback";
 
 const images = [
   {
@@ -100,7 +102,10 @@ const PlitkaBruschatka = () => {
 				<CardsGoods goods={plitka} />
 				<h2 className="main-goods__title">Брусчатка</h2>
 				<CardsGoods goods={bruschatka} />
-				<GalleryImg items={images} />
+        <GalleryImg items={images} />
+        <FeedbackPhone/>
+        <Guarantee />
+        <Feedback/>
 			</main>
 			<Footer/>
 		</>

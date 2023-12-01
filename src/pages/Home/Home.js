@@ -7,6 +7,7 @@ import Footer from '../../components/Footer/Footer';
 import CardsGoods from '../../components/CardsGoods/CardsGoods';
 import { mramor } from '../../data';
 import GalleryImg from '../../components/GalleryImg';
+import Feedback, { FeedbackPhone } from '../../components/Feedback';
 
 const nobelius = [
   {
@@ -203,17 +204,13 @@ const apartment = [
 
 const Home = () => {
 
-  const handleClick = (e) => {
-
-    const target = e.currentTarget;
-    const ind = target.options.selectedIndex;
-    const selected = target.options[ind];
+  const handleChange = (e) => {
+    const target = e.target;
 
     const [...arrGal] = target.nextElementSibling.children;
-		arrGal.forEach((block, i) => {
+		arrGal.forEach(block => {
       block.classList.remove('main-pages__gallery_active');
-      console.log(block)
-			if (block.id === selected.dataset.target) block.classList.add('main-pages__gallery_active');
+			if (block.id === target.value) block.classList.add('main-pages__gallery_active');
 		});
 
 	}
@@ -226,11 +223,11 @@ const Home = () => {
 				<section className="block-dark  bg-dark text-light">
 					<div className="container">
 						<h2 className='block-dark__title'>Наши преимущества</h2>
-						<h3>Quam adipisci velit, sed quia numquam eius modi tempora incidunt!</h3>
+						<h3 className='block-dark__subtitle'>Quam adipisci velit, sed quia numquam eius modi tempora incidunt!</h3>
 						<p className="text-light mb-5">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia est.Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, adipisci!</p>
 						<Button color={'success'}>
-                    		Позвонить
-                		</Button>
+              Позвонить
+             </Button>
 					</div>
 				</section>
 				<section className='block-light'>
@@ -242,11 +239,11 @@ const Home = () => {
 				<section className="block-dark bg-dark text-light">
 					<div className="container">
 						<h2 className='block-dark__title'>Партнерам</h2>
-						<h3>Quam adipisci velit, sed quia numquam eius modi tempora incidunt!</h3>
+						<h3 className='block-dark__subtitle'>Quam adipisci velit, sed quia numquam eius modi tempora incidunt!</h3>
 						<p className="text-light mb-5">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia est.Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, adipisci!</p>
 						<Button color={'success'}>
-                    		Позвонить
-                		</Button>
+              Позвонить
+             </Button>
 					</div>
 				</section>
 				<section className='block-light'>
@@ -254,35 +251,36 @@ const Home = () => {
 						<h2 className='block-light__title'>Мрамор</h2>
 						<CardsGoods goods={mramor} modifier={'mramor'} />
 					</div>
-				</section>
+        </section>
+        <FeedbackPhone/>
 				<section className="block-dark  bg-dark text-light">
 					<div className="container">
 						<h2 className='block-dark__title'>О нас</h2>
-						<h3>Quam adipisci velit, sed quia numquam eius modi tempora incidunt!</h3>
+						<h3 className='block-dark__subtitle'>Quam adipisci velit, sed quia numquam eius modi tempora incidunt!</h3>
 						<p className="text-light mb-5">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia est.Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, adipisci!</p>
 						<Button color={'success'}>
-                    		Позвонить
-                		</Button>
+              Позвонить
+            </Button>
 					</div>
 				</section>
 				<section className='block-light'>
 					<div className="container">
             <h2 className='block-light__title'>Наши проекты</h2>
             <div className="main-pages__collapse-block">
-              <select defaultValue={'default'} name="" id="" className="main-pages__tabs" onChange={handleClick}>
-                <option value="default" disabled>Celect here</option>
-                <option value="ЖК Нобелиус" data-target="#nobelius">ЖК Нобелиус</option>
-                <option value="Бани Алексеева г. Подольск" data-target="#bathhouse">Бани Алексеева г. Подольск</option>
-                <option value="Апарт-комплекс Красная стрела" data-target="#apartment">Апарт-комплекс Красная стрела</option>
+              <select name='select-gallery' className="main-pages__tabs" defaultValue="nobelius" onChange={handleChange}>
+                <option value="nobelius">ЖК Нобелиус</option>
+                <option value="bathhouse">Бани Алексеева г. Подольск</option>
+                <option value="apartment">Апарт-комплекс Красная стрела</option>
               </select>
 							<div className="main-pages__galleries">
-								<div id='#nobelius' className='main-pages__gallery'><GalleryImg items={nobelius} /></div>
-								<div id='#bathhouse' className='main-pages__gallery'><GalleryImg items={bathhouse} /></div>
-								<div id='#apartment' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
+								<div id='nobelius' className='main-pages__gallery main-pages__gallery_active'><GalleryImg items={nobelius} /></div>
+								<div id='bathhouse' className='main-pages__gallery'><GalleryImg items={bathhouse} /></div>
+								<div id='apartment' className='main-pages__gallery'><GalleryImg items={apartment} /></div>
 							</div>
 							</div>
 					</div>
-				</section>
+        </section>
+        <Feedback/>
 			</main>
 			<Footer/>
 		</>

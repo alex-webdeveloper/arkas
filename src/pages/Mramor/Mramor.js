@@ -4,6 +4,8 @@ import Footer from '../../components/Footer/Footer';
 import './Mramor.scss';
 import { mramor } from '../../data';
 import GalleryImg from '../../components/GalleryImg';
+import Guarantee from '../../components/Guarantee/Guarantee';
+import Feedback, { FeedbackPhone } from '../../components/Feedback';
 
 const images = [
   {
@@ -428,9 +430,12 @@ const Mramor = () => {
 		<>
 			<Header title={'Мрамор'} />
 			<main className='main-goods main-goods_mramor'>
-				<CardsGoods goods={mramor} modifier={'mramor'} />
+        <CardsGoods goods={mramor} modifier={'mramor'} />
+        <FeedbackPhone/>
 				<h2 className="main-goods__title mb-5">Галерея изделий из мрамора</h2>
-				<GalleryImg items={images} />
+        <GalleryImg items={images} />
+        <Guarantee />
+        <Feedback/>
 			</main>
 			<Footer/>
 		</>

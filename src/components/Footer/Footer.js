@@ -35,12 +35,12 @@ const Footer = () => {
 							<h2>Контакты</h2>
 							<Nav vertical>
 								<NavItem>
-									<NavLink href='mailto:info@eco-ferma.pro'>
+									<NavLink href='mailto:info@eco-fer.pro'>
 										arkaskameninfo@form.com
 									</NavLink>
 								</NavItem>
 								<NavItem>
-									<NavLink href='tel:+4954647225'>
+									<NavLink href='tel:+74954647555'>
 										495-444-44-44
 									</NavLink>
 								</NavItem>
