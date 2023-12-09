@@ -1299,7 +1299,7 @@ export const galleryImgDesign = [
 	
 ]
 
-// proekty
+// proekty all
 export const galleryImgApartMosCity = [
 	{
 		original: apartMosCity1,
