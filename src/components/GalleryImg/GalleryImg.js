@@ -9,7 +9,7 @@ const GalleryImg = (props) => {
   return (
     <section className="gallery-section">
       <Container>
-          <ImageGallery {...props} showIndex autoPlay />
+        <ImageGallery {...props} showIndex autoPlay />
       </Container>
     </section>
   )

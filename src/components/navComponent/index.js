@@ -61,8 +61,8 @@ function NavComponent(props) {
                   <DropdownItem tag={NavLinkRouter} onClick={() => setIsOpen(!isOpen)} to="/izdeliya-iz-mramora/stoly-stoleshnicy">
                     Столы, столешницы
                   </DropdownItem>
-                  <DropdownItem tag={NavLinkRouter} onClick={() => setIsOpen(!isOpen)} to="/izdeliya-iz-mramora/tela-vrashcheniya">
-                    Тела вращения
+                  <DropdownItem tag={NavLinkRouter} onClick={() => setIsOpen(!isOpen)} to="/izdeliya-iz-mramora/podokonniki">
+                    Подоконники
                   </DropdownItem>
                   <DropdownItem tag={NavLinkRouter} onClick={() => setIsOpen(!isOpen)} to="/izdeliya-iz-mramora/plitka-bruschatka">
                     Плитка, брусчатка

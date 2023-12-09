@@ -1,4 +1,4 @@
-import TelaVrashcheniya from './TelaVrashcheniya';
+import Podokonniki from './Podokonniki';
 import Design from './Design';
 import KaminyPortaly from './KaminyPortaly';
 import LestnicyStupeni from './LestnicyStupeni';
@@ -11,6 +11,6 @@ export default IzdeliyaIzMramora;
 
 
 export {
-    TelaVrashcheniya, Design, KaminyPortaly, LestnicyStupeni,
+    Podokonniki, Design, KaminyPortaly, LestnicyStupeni,
     OblicovkaFasadov, PlitkaBruschatka, StolyStoleshnicy
 };

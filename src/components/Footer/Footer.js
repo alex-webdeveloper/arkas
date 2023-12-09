@@ -27,7 +27,7 @@ const Footer = () => {
 			<Container>
 				<nav className='footer__nav'>
 					<Row>
-						<BlockFooter size={'3'} title={'Продукция'} list={ [ {text: 'Плитка, Брусчатка', link: '#'},  {text: 'Лестницы, Ступени', link: '#'}, {text: 'Камины, Порталы', link: '#'}, {text: 'Столы, Столешницы', link: '#'}, {text: 'Тела вращения', link: '#'}, {text: 'Облицовка фасадов', link: '#'}, {text: 'Индивидуальные решения', link: '#'} ] }/>
+						<BlockFooter size={'3'} title={'Продукция'} list={ [ {text: 'Плитка, Брусчатка', link: '#'},  {text: 'Лестницы, Ступени', link: '#'}, {text: 'Камины, Порталы', link: '#'}, {text: 'Столы, Столешницы', link: '#'}, {text: 'Подоконники', link: ''}, {text: 'Облицовка фасадов', link: '#'}, {text: 'Индивидуальные решения', link: '#'} ] }/>
 						<BlockFooter size={'2'} title={'Камень'} list={ [ {text: 'Мрамор', link: "/mramor"}, {text: 'Мраморный известняк', link: '/mramor'} ] } /> 
 						<BlockFooter size={'3'} title={'Информация'} list={[{ text: 'О нас', link: '/about' }, { text: 'Партнерам', link: '/partneram' }, { text: 'Наши проекты', link: '/proekty'}, { text: 'Все изделия', link: '/#'} ] } />
 						{/* <BlockFooter title={'Контакты'} list={ ['arkaskamen@form.com', '882-587-3025', 'Москва ул. Каменная дом 2 стр.1'] } /> */}

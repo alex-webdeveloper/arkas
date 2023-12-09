@@ -7,7 +7,7 @@ import Blog from './pages/Blog';
 import Layout from './components/Layout';
 import Mramor from './pages/Mramor';
 import {
-  TelaVrashcheniya, Design, KaminyPortaly, LestnicyStupeni,
+  Podokonniki, Design, KaminyPortaly, LestnicyStupeni,
   OblicovkaFasadov, PlitkaBruschatka, StolyStoleshnicy
 } from './pages/IzdeliyaIzMramora';
 import IzdeliyaIzMramora from './pages/IzdeliyaIzMramora';
@@ -84,8 +84,8 @@ const App = () => {
       element: <IzdeliyaIzMramora />,
     },
     {
-      path: "/izdeliya-iz-mramora/tela-vrashcheniya",
-      element: <TelaVrashcheniya />,
+      path: "/izdeliya-iz-mramora/podokonniki",
+      element: <Podokonniki />,
     },
     {
       path: "/izdeliya-iz-mramora/design",

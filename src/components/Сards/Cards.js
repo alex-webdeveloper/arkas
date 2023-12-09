@@ -55,7 +55,7 @@ const Cards = () => {
 
 }
 
-const CardsPages= ({cards}) => {
+const CardsPages= ({cards, par = false}) => {
   return (
       <section className='cards-pages'>
           <Row>
@@ -65,7 +65,7 @@ const CardsPages= ({cards}) => {
                         <CardImg
                             alt={card.title}
                             src={card.src}
-                            top
+                            top={par}
                         />
                         {card.text && (
                             <CardBody>

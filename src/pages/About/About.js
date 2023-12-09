@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'reactstrap';
 import { CardsPages } from '../../components/Сards/Cards';
 import { aboutKarer, aboutProizvodstvo } from '../../data';
 import Feedback from '../../components/Feedback';
+import './About.scss';
 
 const About = () => {
 	return (
@@ -25,7 +26,7 @@ const About = () => {
 							Этого позволяют добиться квалифицированный персонал и современное оборудование, на котором проходят все этапы обработки мрамора.
 						</p>
 					</div>
-					<CardsPages cards={aboutKarer} />
+					<CardsPages cards={aboutKarer} par={true} />
 					<h3 className="main-pages__subtitle">Продукция</h3>
 					<div className="main-pages__descr">
 						<p className="main-pages__text">
@@ -79,7 +80,8 @@ const About = () => {
 						</p>
 					</div>
 				</Container>
-				<Feedback/>
+				<Feedback />
+				<embed src="" type="application/pdf" />
 			</main>
 			<Footer/>
 		</>

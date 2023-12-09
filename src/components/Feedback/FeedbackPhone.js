@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef , useEffect} from 'react';
 import { Container, Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup, FormText } from "reactstrap";
 import './FeedbackPhone.scss';
 
@@ -22,17 +22,21 @@ export default FeedbackPhone;
 
 
 function ModalBlock(props) {
-  const [modal, setModal] = useState(false);
-  const [unmountOnClose, setUnmountOnClose] = useState(true);
+    const [modal, setModal] = useState(false);
+    const inputRef = useRef(null);
+    const [unmountOnClose, setUnmountOnClose] = useState(true);
 
-  const toggle = () => setModal(!modal);
+    const toggle = () => {
+        setModal(!modal);
+        setTimeout(() => inputRef.current.focus());
+  };
 //   const changeUnmountOnClose = (e) => {
 //     let { value } = e.target;
 //     setUnmountOnClose(JSON.parse(value));
 //   };
 
   return (
-    <div>
+      <div>
         <Button className="feedbackPhone__btn" onClick={toggle}>
           Спросите у нашего специалиста!
         </Button>
@@ -44,23 +48,22 @@ function ModalBlock(props) {
                         <Input
                         type="text"
                         placeholder="Введите ваше имя"
-                        // required
-                        minlength="2"
+                        required
+                        innerRef={inputRef}
                         />
                         <Input        
                         type="tel"
                         placeholder="Введите телефон"
                         // required
-                        minlength="7"
                         />
                         <Input        
                         type="text"
-                        value="Запрос на обратный звонок"
+                        defaultValue="Запрос на обратный звонок"
                         hidden
                         />
                     </ModalBody>
                     <ModalFooter>
-                        <Button type='submit' onClick={(e) => e.preventDefault()}>
+                        <Button type='submit'>
                             Заказать звонок
                         </Button>
                         <Button onClick={toggle} type='button'>

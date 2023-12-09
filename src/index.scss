@@ -21,6 +21,10 @@ h5 {
 
 .btn {
     background-color: $btn-bg;
+
+    &:focus-visible, &:active {
+        background-color: $btn-hover;
+    }
     &:hover {
         color: darken($color: #f8f9fa, $amount: 10) !important;
         background-color: $btn-hover;
